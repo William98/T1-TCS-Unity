@@ -1,0 +1,27 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+ build:
+
+  runs-on: ubuntu-latest
+
+  steps:
+  - uses: actions/checkout@v3
+  - name: install_packages
+    run: "sudo apt-get update; sudo apt-get -y install cppcheck-gui cppcheck clang valgrind"
+  - name: cppcheck
+    run: "cd T1-Unity/examples/TCS-T1; make cppcheck"
+  - name: make
+    run: "cd T1-Unity/examples/TCS-T1; make"
+  - name: cov
+    run: "cd T1-Unity/examples/TCS-T1; make cov"
+  - name: valgrind
+    run: "cd T1-Unity/examples/TCS-T1; make valgrind"
+  - name: sanitizer
+    run: "cd T1-Unity/examples/TCS-T1; make sanitizer"
