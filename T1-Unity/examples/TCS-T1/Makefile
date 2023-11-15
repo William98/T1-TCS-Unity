@@ -80,7 +80,7 @@ sanitizer:
 cov:
 	$(C_COMPILER) $(CFLAGS) -fprofile-arcs -ftest-coverage $(INC_DIRS) $(SRC_FILES1) -o $(TARGET1)
 	./$(TARGET1) -v
-	gcov -b all_tests.out-all_tests.c all_tests.out-bubble_sort.c all_tests.out-counting_sort.c all_tests.out-heap_sort.c all_tests.out-insertion_sort.c all_tests.out-merge_sort.c all_tests.out-quick_sort.c all_tests.out-radix_sort.c all_tests.out-selection_sort.c all_tests.out-sort.c all_tests.out-TestSort_Runner.c all_tests.out-TestsSort.c all_tests.out-unity.c all_tests.out-unity_fixture.c 
+	gcov -b all_tests.out-all_tests.c all_tests.out-bubble_sort.c all_tests.out-counting_sort.c all_tests.out-heap_sort.c all_tests.out-insertion_sort.c all_tests.out-merge_sort.c all_tests.out-quick_sort.c all_tests.out-radix_sort.c all_tests.out-selection_sort.c all_tests.out-sort.c all_tests.out-TestSort_Runner.c all_tests.out-TestsSort.c
 
 run:
 	./$(TARGET1) -v
